@@ -157,8 +157,10 @@ async function runTestWithCaps () {
   // mandeep.singh@hivehome.com
   // let driver = new webdriver.Builder().usingServer(`https://mandeepsingh_sfE4v3:x4ToZkzbesqsxDhXsxbj@hub-cloud.browserstack.com/wd/hub`).withCapabilities(cap).build();
   // mandeep.singh+alpha@hivehome.com
-  let driver = new webdriver.Builder().usingServer(`https://mandeepsingh_yM2pnO:QeqVzbYqysrq1JhP4qsF@hub-cloud.browserstack.com/wd/hub`).withCapabilities(cap).build();
-
+  // let driver = new webdriver.Builder().usingServer(`https://mandeepsingh_yM2pnO:QeqVzbYqysrq1JhP4qsF@hub-cloud.browserstack.com/wd/hub`).withCapabilities(cap).build();
+  // akshay.kumar@sky.com
+  let driver = new webdriver.Builder().usingServer(`https://akshaykumar_8nTipE:yv83xVcZunkbApncJxPA@hub-cloud.browserstack.com/wd/hub`).withCapabilities(cap).build();
+  
   await driver.manage().window().maximize();
 
 
