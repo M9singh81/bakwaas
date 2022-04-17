@@ -154,6 +154,13 @@ async function runTestWithCaps () {
 
       console.log(cap);
 
+  let totalWait = num*1000*60;
+  console.log('Wait '+totalWait+' mins before start';
+  await driver.sleep(totalwait);
+  console.log('Starting Test NOW')
+
+             
+  await drive.
   // mandeep.singh@hivehome.com
   // let driver = new webdriver.Builder().usingServer(`https://mandeepsingh_sfE4v3:x4ToZkzbesqsxDhXsxbj@hub-cloud.browserstack.com/wd/hub`).withCapabilities(cap).build();
   // mandeep.singh+alpha@hivehome.com
@@ -161,55 +168,24 @@ async function runTestWithCaps () {
   // akshay.kumar@sky.com
   //let driver = new webdriver.Builder().usingServer(`https://akshaykumar_8nTipE:yv83xVcZunkbApncJxPA@hub-cloud.browserstack.com/wd/hub`).withCapabilities(cap).build();
 //     siddhart.malhotra@bt.com
-  let driver = new webdriver.Builder().usingServer(`https://siddhartmalhotra_onJkxi:emFzQ3GZ4WG4QA1TofGi@hub-cloud.browserstack.com/wd/hub`).withCapabilities(cap).build();
-
+//  let driver = new webdriver.Builder().usingServer(`https://siddhartmalhotra_onJkxi:emFzQ3GZ4WG4QA1TofGi@hub-cloud.browserstack.com/wd/hub`).withCapabilities(cap).build();
+//ajay.kumar@bt.com
+  let driver = new webdriver.Builder().usingServer(`https://ajaykumar_SJ3i4P:qkwDY9yAXjJqSdpumC6k@hub-cloud.browserstack.com/wd/hub`).withCapabilities(cap).build();
+  
   await driver.manage().window().maximize();
-
 
   try{
     await driver.get("https://www.youtube.com/watch?v=1ZxhagMxmlc");
     await driver.wait(webdriver.until.titleMatches(/Youtube/i), 10000);
     await driver.wait(webdriver.until.elementLocated(By.xpath('(.//*[@class=\'yt-simple-endpoint style-scope ytd-button-renderer\'])[last()]')), 10000).click();
-    await driver.sleep(30000);
-    await driver.wait(webdriver.until.elementLocated(By.xpath('(.//*[@class=\'style-scope ytd-toggle-button-renderer\'])[1]')), 10000).click();
-    await driver.sleep(30000);
-    await driver.wait(webdriver.until.elementLocated(By.xpath('(.//*[@class=\'style-scope ytd-toggle-button-renderer\'])[1]')), 10000).click();
-    console.log('Waited one minute');
-    await driver.sleep(30000);
-    await driver.wait(webdriver.until.elementLocated(By.xpath('(.//*[@class=\'style-scope ytd-toggle-button-renderer\'])[1]')), 10000).click();
-    await driver.sleep(30000);
-    await driver.wait(webdriver.until.elementLocated(By.xpath('(.//*[@class=\'style-scope ytd-toggle-button-renderer\'])[1]')), 10000).click();
-    console.log('Waited two minute');
-    await driver.sleep(30000);
-    await driver.wait(webdriver.until.elementLocated(By.xpath('(.//*[@class=\'style-scope ytd-toggle-button-renderer\'])[1]')), 10000).click();
-    await driver.sleep(30000);
-    await driver.wait(webdriver.until.elementLocated(By.xpath('(.//*[@class=\'style-scope ytd-toggle-button-renderer\'])[1]')), 10000).click();
-    console.log('Waited three minute');
-    await driver.sleep(30000);
-    await driver.wait(webdriver.until.elementLocated(By.xpath('(.//*[@class=\'style-scope ytd-toggle-button-renderer\'])[1]')), 10000).click();
-    await driver.sleep(30000);
-    await driver.wait(webdriver.until.elementLocated(By.xpath('(.//*[@class=\'style-scope ytd-toggle-button-renderer\'])[1]')), 10000).click();
-    console.log('Waited four minute');
-    await driver.sleep(30000);
-    await driver.wait(webdriver.until.elementLocated(By.xpath('(.//*[@class=\'style-scope ytd-toggle-button-renderer\'])[1]')), 10000).click();
-    await driver.sleep(30000);
-    await driver.wait(webdriver.until.elementLocated(By.xpath('(.//*[@class=\'style-scope ytd-toggle-button-renderer\'])[1]')), 10000).click();
-    console.log('Waited five minute');
-    await driver.sleep(30000);
-    await driver.wait(webdriver.until.elementLocated(By.xpath('(.//*[@class=\'style-scope ytd-toggle-button-renderer\'])[1]')), 10000).click();
-    await driver.sleep(30000);
-    await driver.wait(webdriver.until.elementLocated(By.xpath('(.//*[@class=\'style-scope ytd-toggle-button-renderer\'])[1]')), 10000).click();
-    console.log('Waited six minute');
-    await driver.sleep(30000);
-    await driver.wait(webdriver.until.elementLocated(By.xpath('(.//*[@class=\'style-scope ytd-toggle-button-renderer\'])[1]')), 10000).click();
-    await driver.sleep(30000);
-    await driver.wait(webdriver.until.elementLocated(By.xpath('(.//*[@class=\'style-scope ytd-toggle-button-renderer\'])[1]')), 10000).click();
-    console.log('Waited seven minute');
-    await driver.sleep(30000);
-    await driver.wait(webdriver.until.elementLocated(By.xpath('(.//*[@class=\'style-scope ytd-toggle-button-renderer\'])[1]')), 10000).click();
-    await driver.sleep(30000);
-    await driver.wait(webdriver.until.elementLocated(By.xpath('(.//*[@class=\'style-scope ytd-toggle-button-renderer\'])[1]')), 10000).click();
-    console.log('Waited eight minute');
+
+    for (let i = 0; i <= num; i++) {
+      await driver.sleep(30000);
+      await driver.wait(webdriver.until.elementLocated(By.xpath('(.//*[@class=\'style-scope ytd-toggle-button-renderer\'])[1]')), 10000).click();
+      await driver.sleep(30000);
+      await driver.wait(webdriver.until.elementLocated(By.xpath('(.//*[@class=\'style-scope ytd-toggle-button-renderer\'])[1]')), 10000).click();
+      console.log('Waited '+i+' minute');
+    }    
 
     // // locating product on webpage
     // const iAgree = await driver.wait(webdriver.until.elementLocated(By.xpath('//*[.=\'I agree\']')), 10000)
