@@ -156,7 +156,11 @@ async function runTestWithCaps () {
 
   let totalWait = num*1000*60;
   console.log('Wait '+totalWait+' mins before start');
-  await driver.sleep(totalwait);
+    
+  setTimeout(function() {
+      console.log('hello world!');
+   }, totalWait);
+  
   console.log('Starting Test NOW')
 
             
