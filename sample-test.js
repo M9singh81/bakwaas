@@ -155,12 +155,11 @@ async function runTestWithCaps () {
       console.log(cap);
 
   let totalWait = num*1000*60;
-  console.log('Wait '+totalWait+' mins before start';
+  console.log('Wait '+totalWait+' mins before start');
   await driver.sleep(totalwait);
   console.log('Starting Test NOW')
 
-             
-  await drive.
+            
   // mandeep.singh@hivehome.com
   // let driver = new webdriver.Builder().usingServer(`https://mandeepsingh_sfE4v3:x4ToZkzbesqsxDhXsxbj@hub-cloud.browserstack.com/wd/hub`).withCapabilities(cap).build();
   // mandeep.singh+alpha@hivehome.com
