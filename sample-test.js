@@ -157,9 +157,7 @@ async function runTestWithCaps () {
   let totalWait = num*1000*60;
   console.log('Wait '+totalWait+' mins before start');
     
-  setTimeout(function() {
-      console.log('hello world!');
-   }, totalWait);
+  await new Promise(resolve => setTimeout(resolve, totalWait));
   
   console.log('Starting Test NOW')
 
